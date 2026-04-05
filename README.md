@@ -149,6 +149,10 @@ Lines:  5667  |  UUID entries: 4908
 - [anthropics/claude-code#24304](https://github.com/anthropics/claude-code/issues/24304) — Broken parentUuid references and snapshot collisions
 - [anthropics/claude-code#21751](https://github.com/anthropics/claude-code/issues/21751) — Missing assistant text blocks with extended thinking
 
+## Limitations and feedback
+
+This tool was developed and tested against a specific real-world corrupted session file. It handles every corruption pattern I've encountered, but I have not seen every possible way a JSONL file can break. If this tool doesn't fix your session, please [open an issue](https://github.com/ymonster/cc_jsonl_fix/issues) with a description of the problem (and a link to the relevant Claude Code issue if applicable). I'm happy to investigate and try to add support for new corruption patterns.
+
 ## License
 
 MIT

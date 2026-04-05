@@ -149,6 +149,10 @@ Lines:  5667  |  UUID entries: 4908
 - [anthropics/claude-code#24304](https://github.com/anthropics/claude-code/issues/24304) — parentUuid 引用不存在的 UUID 和快照碰撞
 - [anthropics/claude-code#21751](https://github.com/anthropics/claude-code/issues/21751) — 使用 extended thinking 时 assistant 文本部分丢失
 
+## 局限性与反馈
+
+本工具基于一个真实的损坏会话文件开发和测试，覆盖了我遇到的所有损坏模式，但我没有见过所有可能的 JSONL 损坏形式。如果本工具无法修复你的会话，欢迎[提交 issue](https://github.com/ymonster/cc_jsonl_fix/issues)，描述你遇到的问题（如果有相关的 Claude Code issue 链接也请附上）。我很乐意研究并尝试支持新的损坏模式。
+
 ## 许可证
 
 MIT
