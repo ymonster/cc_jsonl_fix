@@ -1,0 +1,37 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Session data (contains private conversation content)
+*.jsonl
+*.jsonl.old
+
+# Working files
+F--projects-remote-projects-win-prox.json
+.session_cache.json
+
+# Development iteration files
+fix_jsonl.py
+fix_jsonl_v2.py
+fix_jsonl_v3.py
+ai_review_v1.md
+analysis.md
+infomations.md
+problem.dir
+
+# Cloned repos
+claude-code-thinking-blocks-fix/
+
+# Misc
+新建文件夹/
+src/
+
+# Claude Code internals
+.claude/
