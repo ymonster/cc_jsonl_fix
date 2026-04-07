@@ -50,19 +50,19 @@ Claude Code 将对话以 JSONL 格式存储，消息通过 `uuid` / `parentUuid`
 
 ```bash
 # 基本修复（自动创建备份）
-python repair_jsonl.py ~/.claude/projects/<项目哈希>/<session-id>.jsonl
+uv run repair_jsonl.py ~/.claude/projects/<项目哈希>/<session-id>.jsonl
 
 # 使用 uv（推荐）
 uv run repair_jsonl.py <session-file>.jsonl
 
 # 预览模式，不修改文件
-python repair_jsonl.py <session-file>.jsonl --dry-run --verbose
+uv run repair_jsonl.py <session-file>.jsonl --dry-run --verbose
 
 # 输出到不同文件
-python repair_jsonl.py <session-file>.jsonl -o repaired.jsonl
+uv run repair_jsonl.py <session-file>.jsonl -o repaired.jsonl
 
 # 推荐：修复 + 更新时间戳（详见下文）
-python repair_jsonl.py <session-file>.jsonl --touch
+uv run repair_jsonl.py <session-file>.jsonl --touch
 ```
 
 ### 选项
