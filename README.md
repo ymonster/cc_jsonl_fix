@@ -50,19 +50,19 @@ After:
 
 ```bash
 # Basic repair (creates backup automatically)
-python repair_jsonl.py ~/.claude/projects/<project-hash>/<session-id>.jsonl
+uv run repair_jsonl.py ~/.claude/projects/<project-hash>/<session-id>.jsonl
 
 # With uv (recommended)
 uv run repair_jsonl.py <session-file>.jsonl
 
 # Preview without modifying
-python repair_jsonl.py <session-file>.jsonl --dry-run --verbose
+uv run repair_jsonl.py <session-file>.jsonl --dry-run --verbose
 
 # Output to a different file
-python repair_jsonl.py <session-file>.jsonl -o repaired.jsonl
+uv run repair_jsonl.py <session-file>.jsonl -o repaired.jsonl
 
 # Recommended: repair + update timestamp (see below)
-python repair_jsonl.py <session-file>.jsonl --touch
+uv run repair_jsonl.py <session-file>.jsonl --touch
 ```
 
 ### Options
