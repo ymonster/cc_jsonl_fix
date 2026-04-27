@@ -14,6 +14,15 @@ This is a [known bug](https://github.com/anthropics/claude-code/issues/22526) re
 - [#24304](https://github.com/anthropics/claude-code/issues/24304) — parentUuid references non-existent UUID
 - [#21751](https://github.com/anthropics/claude-code/issues/21751) — Assistant text block missing, only thinking block written
 
+### Two symptoms, same root cause
+
+The same chain corruption can surface in two very different ways:
+
+- **Silent truncation** — `--resume` succeeds but most history is gone. The commonly reported case (#22526, #24304).
+- **Frozen session** — `--resume` succeeds and the session opens, but every prompt afterward never gets a response. Seen on a 47 MB session with 1235 snapshot/messageId collisions and 6 disconnected branches.
+
+Both come from the same underlying chain integrity loss and are repaired by the same flow.
+
 ## What does this tool fix?
 
 The tool applies four repair phases, each targeting a specific corruption pattern:

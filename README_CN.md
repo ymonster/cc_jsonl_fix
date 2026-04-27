@@ -14,6 +14,15 @@ Claude Code 将对话以 JSONL 格式存储，消息通过 `uuid` / `parentUuid`
 - [#24304](https://github.com/anthropics/claude-code/issues/24304) — parentUuid 指向不存在的 UUID
 - [#21751](https://github.com/anthropics/claude-code/issues/21751) — assistant 消息只写了 thinking block，文本部分丢失
 
+### 两种症状，同一根因
+
+同一种 chain 损坏会有两种完全不同的表现：
+
+- **静默截断** — `--resume` 成功，但大部分历史消失。最常见，社区报告的就是这种 (#22526, #24304)。
+- **会话冻结** — `--resume` 成功，会话能打开，但之后发出的任何消息都不再有回复。真实案例：47 MB JSONL，1235 个 snapshot/messageId 碰撞 + 6 个断链分支。
+
+底层根因相同（chain 完整性破坏），同一套修复流程都能处理。
+
 ## 修复了什么？
 
 工具分四个阶段修复，每阶段针对一种特定损坏模式：
